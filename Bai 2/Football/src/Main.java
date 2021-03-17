@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        //Khai báo thông tin cầu thủ
         ArrayList<Player> players = new ArrayList<Player>();
         Player player1 = new Player(1, "Marc-André ter Stegen", Player.Position.GK);
         Player player2 = new Player(2, "Sergiño Dest", Player.Position.DF);
@@ -48,7 +50,20 @@ public class Main {
         players.add(player21);
         players.add(player22);
 
-        Team team = new Team(players);        
-        team.buildTeam(3,5, 2);
+        //Thực hiện nhập xuất
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập đội hình bạn muốn được hiển thị:(433- 352 - 442 - 451)");
+        while (sc.hasNextLine()) {
+            String input = sc.nextLine();
+            String[] inputs = input.split("");
+            Team team = new Team(players);
+            while (Integer.parseInt(inputs[0]) + Integer.parseInt(inputs[1]) + Integer.parseInt(inputs[2]) != 10) {
+                System.out.println("Giá trị bạn nhập vào chưa đúng!, vui lòng nhập lại");
+                input = sc.nextLine();
+                break;
+            }
+            team.buildTeam(Integer.parseInt(inputs[0]), Integer.parseInt(inputs[1]), Integer.parseInt(inputs[2]));
+            System.out.println("Nhập đội hình bạn muốn được hiển thị:(433- 352 - 442 - 451)");
+        }
     }
 }

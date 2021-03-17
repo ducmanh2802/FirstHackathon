@@ -5,14 +5,18 @@ public class Team {
     ArrayList<Player> players = new ArrayList<>();
     ArrayList<Player> teamXI = new ArrayList<Player>();
 
+    public Team(ArrayList<Player> players) {
+        this.players = players;
+    }
+
     public ArrayList<Player> buildTeam(int defender, int midfielder, int forwarder) {
         List<Player> tempPlayers = new ArrayList<>();
+
+        //tạo bản sao của danh sách cầu thủ
         for (int i = 0; i < players.size(); i++) {
             tempPlayers.add(players.get(i));
         }
-        while (defender + midfielder + forwarder != 10) {
-            System.out.println("Số lượng bạn nhập vào chưa đúng!, vui lòng nhập lại");
-        }
+
 
         int random = (int) Math.floor(Math.random() * tempPlayers.size());
         Player randomPlayer = tempPlayers.get(random);
@@ -56,14 +60,13 @@ public class Team {
                 countForwarder++;
             }
         }
-        for (int i =0; i< teamXI.size();i++) {
-            System.out.println(teamXI.get(i).getFullName() + " " + teamXI.get(i).getPosition());
+        for (int i = 0; i < teamXI.size(); i++) {
+            System.out.println(teamXI.get(i).getNum() + " - " + teamXI.get(i).getFullName() + " - " + teamXI.get(i).getPosition());
+            if (i == 0 || i == defender || i == defender + midfielder) {
+                System.out.println("\n-----------------------------------------");
+            }
         }
         return teamXI;
-    }
-
-    public Team(ArrayList<Player> players) {
-        this.players = players;
     }
 
     public ArrayList<Player> getPlayers() {
