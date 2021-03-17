@@ -24,7 +24,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(String fullName, int num, Player.Position position) {
+    public Player(int num,String fullName , Player.Position position) {
         this.fullName = fullName;
         this.num = num;
         this.position = position;
