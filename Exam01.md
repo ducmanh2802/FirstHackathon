@@ -1,7 +1,7 @@
 # Bài thực hành số 1, môn Java Core
 
 Đây là những nội dung các bạn đã được học:
-.......................................................................
+
 1. Biến và kiểu dữ liệu
 2. Nhập xuất trong java
 3. Cấu trúc điều khiển
