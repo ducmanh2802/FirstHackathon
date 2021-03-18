@@ -63,7 +63,7 @@ public class Team {
         for (int i = 0; i < teamXI.size(); i++) {
             System.out.println(teamXI.get(i).getNum() + " - " + teamXI.get(i).getFullName() + " - " + teamXI.get(i).getPosition());
             if (i == 0 || i == defender || i == defender + midfielder) {
-                System.out.println("\n-----------------------------------------");
+                System.out.println("\n---------------------------");
             }
         }
         return teamXI;

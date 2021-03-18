@@ -1,0 +1,8 @@
+ không phải là số 
+12321 không là số nguyên tố
+21 không là số nguyên tố
+12 không là số nguyên tố
+141 không là số nguyên tố
+23123 không là số nguyên tố
+2131 là số nguyên tố
+23213 không là số nguyên tố

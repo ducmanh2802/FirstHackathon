@@ -27,7 +27,7 @@ public class App {
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         while (sc.hasNextLine()) {
             String input = sc.nextLine();
-            if (input.equals("X") || input.equals("Q")) {
+            if (input.equals("X") || input.equals("Q") || input.equals("x") || input.equals("q")) {
                 System.exit(0);
             } else {
                 if (!songuyento.exists()) {
@@ -40,8 +40,9 @@ public class App {
 
                     if (n <= 1) {
                         System.out.println(n + " không là số nguyên tố");
-                        fileWriter.write(n + " không là số nguyên tố");
-                        fileWriter.close();
+                        bufferedWriter.write(n + " không là số nguyên tố");
+                        bufferedWriter.newLine();
+                        bufferedWriter.flush();
 
                     } else {
                         for (int i = 2; i <= Math.sqrt(n); i++) {
@@ -52,24 +53,25 @@ public class App {
                         if (isPrime == true) {
                             System.out.println(n + " là số nguyên tố");
                             bufferedWriter.write(n + " là số nguyên tố");
-                            fileWriter.close();
-
+                            bufferedWriter.newLine();
+                            bufferedWriter.flush();
                         } else {
                             System.out.println(n + " không là số nguyên tố");
                             bufferedWriter.write(n + " không là số nguyên tố");
-                            fileWriter.close();
-
+                            bufferedWriter.newLine();
+                            bufferedWriter.flush();
                         }
                     }
                 } catch (NumberFormatException numberFormatException) {
                     System.out.println(input + " không phải là số");
-                    bufferedWriter.write(input + " không là số ");
-                    fileWriter.close();
-
+                    bufferedWriter.write(input + " không phải là số ");
+                    bufferedWriter.newLine();
+                    bufferedWriter.flush();
                 }
             }
             System.out.println("Nhập giá trị đầu vào:");
         }
+        fileWriter.close();
         sc.close();
     }
 }
